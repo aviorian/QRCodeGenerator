@@ -57,7 +57,7 @@ root = Tk()
 root.geometry("315x405")
 root.resizable(width=False,height=False)
 root.title("QR Code Generator")
-root.iconbitmap("icon(scan this.).ico")
+root.iconbitmap("icon.ico")
 
 buttonImage = Image.open("convert.jpg")
 resized= buttonImage.resize((30,30))
