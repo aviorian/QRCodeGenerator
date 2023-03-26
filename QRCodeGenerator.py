@@ -57,15 +57,15 @@ root = Tk()
 root.geometry("315x405")
 root.resizable(width=False,height=False)
 root.title("QR Code Generator")
-root.iconbitmap("icon.ico")
+#root.iconbitmap("icon.ico")
 
-buttonImage = Image.open("convert.jpg")
-resized= buttonImage.resize((30,30))
-lastButton =ImageTk.PhotoImage(resized)
+#buttonImage = Image.open("convert.jpg")
+#resized= buttonImage.resize((30,30))
+#lastButton =ImageTk.PhotoImage(resized)
 
-quitImage= Image.open("quit.jpg")
-resizedQuit=quitImage.resize((30,30))
-lastQuit= ImageTk.PhotoImage(resizedQuit)
+#quitImage= Image.open("quit.jpg")
+#resizedQuit=quitImage.resize((30,30))
+#lastQuit= ImageTk.PhotoImage(resizedQuit)
                                 
 
 
@@ -74,13 +74,13 @@ frameMain = Frame(root, background="#8f00ff",border=0,height=500)
 entryPlace = customtkinter.CTkEntry(frameMain,width=315,corner_radius=20,text_color="#daa520",
                                     placeholder_text="Paste your link...",placeholder_text_color="#daa520")
 
-convertButton = customtkinter.CTkButton(frameMain,text="Convert",command= ButtonFunction,image=lastButton,compound=LEFT,
+convertButton = customtkinter.CTkButton(frameMain,text="Convert",command= ButtonFunction,compound=LEFT,
                                         hover_color="#977316",fg_color="#daa520",border_width=2 ,border_color="#2b50c8",
                                         corner_radius=10,font=("Open Sans",15),text_color="Black")
                                         
 
 
-quitButton = customtkinter.CTkButton(frameMain,text="Quit",command=root.quit,image=lastQuit,compound=LEFT,
+quitButton = customtkinter.CTkButton(frameMain,text="Quit",command=root.quit,compound=LEFT,
                                      hover_color="#A30000",fg_color="#FF0000",border_width=2 ,
                                      border_color="#2b50c8",corner_radius=10,font=("Open Sans",15),text_color="Black")
 
@@ -103,6 +103,7 @@ background8 = Label(frameMain,bg="#8f00ff")
 background9 = Label(frameMain,bg="#8f00ff")
 background10 = Label(frameMain,bg="#8f00ff")
 background11 = Label(frameMain,bg="#8f00ff")
+background12 = Label(frameMain,bg="#8f00ff")
 
 
 
@@ -127,6 +128,7 @@ background8.pack()
 background9.pack()
 background10.pack()
 background11.pack()
+background12.pack()
 
 
 root.mainloop()
