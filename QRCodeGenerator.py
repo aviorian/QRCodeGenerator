@@ -32,9 +32,9 @@ def ButtonFunction():
         clickCounter+=1
 
         
-        file = filedialog.asksaveasfilename(
-                                         defaultextension=".png",
-                                         filetypes=(("PNG File",".png"),("JPEG File",".jpeg")))
+    #    file = filedialog.asksaveasfilename(
+      #                                   defaultextension=".png",
+     #                                    filetypes=(("PNG File",".png"),("JPEG File",".jpeg")))
         
         
         if file:
