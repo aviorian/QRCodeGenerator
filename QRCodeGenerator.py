@@ -6,7 +6,7 @@ import customtkinter
 import os
 
 
-clickCounter = 0
+
 
 
 def linkTaker():
@@ -15,30 +15,20 @@ def linkTaker():
 
 def ButtonFunction():
 
-    global clickCounter
-
     if entryPlace.get() != "":
 
-        if clickCounter > 0:
-
-            for widget in frame.winfo_children():
-                widget.destroy()
-
-        clickCounter += 1
-
-    
-        myQR = qrcode.make(entryPlace.get())
+        myQR = qrcode.make(linkTaker())
         
         
-        myQR.save(f"{file}/default.png")
+        myQR.save(f"{file}\default.png")
 
         qrImage = Image.open(f"{file}/default.png")
         resizedImage = qrImage.resize((150, 150))
         lastImage = ImageTk.PhotoImage(resizedImage)
 
-        newLabel = Label(frame, image=lastImage)
-        newLabel.image = lastImage
-        newLabel.pack()
+        
+        qrLabel.config(image=lastImage)
+        qrLabel.image=lastImage
 
 
 root = Tk()
@@ -48,7 +38,7 @@ root.title("QR Code Generator")
 root.configure(background="#8f00ff")
 
 file = os.getcwd()
-root.iconbitmap(f"{file}\icon.ico")
+root.iconbitmap(f"{file}/icon.ico")
 
 buttonImage = Image.open(f"{file}/convert.jpg")
 resized= buttonImage.resize((30,30))
@@ -79,20 +69,8 @@ clearButton = customtkinter.CTkButton(frameMain, text="Clear", command=lambda: e
 
 frame = LabelFrame(frameMain, background="#8f00ff", border=0)
 
-# Background
 
-background = Label(frameMain, background="#8f00ff")
-background2 = Label(frameMain, bg="#8f00ff")
-background3 = Label(frameMain, bg="#8f00ff")
-background4 = Label(frameMain, bg="#8f00ff")
-background5 = Label(frameMain, bg="#8f00ff")
-background6 = Label(frameMain, bg="#8f00ff")
-background7 = Label(frameMain, bg="#8f00ff")
-background8 = Label(frameMain, bg="#8f00ff")
-background9 = Label(frameMain, bg="#8f00ff")
-background10 = Label(frameMain, bg="#8f00ff")
-background11 = Label(frameMain, bg="#8f00ff")
-background12 = Label(frameMain, bg="#8f00ff")
+
 
 
 qrLabel = Label(frame, background="#8f00ff")
