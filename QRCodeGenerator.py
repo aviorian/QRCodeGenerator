@@ -26,13 +26,10 @@ def ButtonFunction():
 
         clickCounter += 1
 
-    #    file = filedialog.asksaveasfilename(
-      #                                   defaultextension=".png",
-     #                                    filetypes=(("PNG File",".png"),("JPEG File",".jpeg")))
-
+    
         myQR = qrcode.make(entryPlace.get())
         
-        file= os.getcwd()
+        
         myQR.save(f"{file}/default.png")
 
         qrImage = Image.open(f"{file}/default.png")
@@ -48,15 +45,17 @@ root = Tk()
 root.geometry("315x405")
 root.resizable(width=False, height=False)
 root.title("QR Code Generator")
-# root.iconbitmap("icon.ico")
 
-# buttonImage = Image.open("convert.jpg")
-# resized= buttonImage.resize((30,30))
-# lastButton =ImageTk.PhotoImage(resized)
+file = os.getcwd()
+root.iconbitmap(f"{file}\icon.ico")
 
-# quitImage= Image.open("quit.jpg")
-# resizedQuit=quitImage.resize((30,30))
-# lastQuit= ImageTk.PhotoImage(resizedQuit)
+buttonImage = Image.open(f"{file}/convert.jpg")
+resized= buttonImage.resize((30,30))
+lastButton =ImageTk.PhotoImage(resized)
+
+quitImage= Image.open(f"{file}/quit.jpg")
+resizedQuit=quitImage.resize((30,30))
+lastQuit= ImageTk.PhotoImage(resizedQuit)
 
 
 frameMain = Frame(root, background="#8f00ff", border=0, height=500)
@@ -64,12 +63,12 @@ frameMain = Frame(root, background="#8f00ff", border=0, height=500)
 entryPlace = customtkinter.CTkEntry(frameMain, width=315, corner_radius=20, text_color="#daa520",
                                     placeholder_text="Paste your link...", placeholder_text_color="#daa520")
 
-convertButton = customtkinter.CTkButton(frameMain, text="Convert", command=ButtonFunction, compound=LEFT,
+convertButton = customtkinter.CTkButton(frameMain,image =lastButton ,text="Convert", command=ButtonFunction, compound=LEFT,
                                         hover_color="#977316", fg_color="#daa520", border_width=2, border_color="#2b50c8",
                                         corner_radius=10, font=("Open Sans", 15), text_color="Black")
 
 
-quitButton = customtkinter.CTkButton(frameMain, text="Quit", command=root.quit, compound=LEFT,
+quitButton = customtkinter.CTkButton(frameMain,image =lastQuit, text="Quit", command=root.quit, compound=LEFT,
                                      hover_color="#A30000", fg_color="#FF0000", border_width=2,
                                      border_color="#2b50c8", corner_radius=10, font=("Open Sans", 15), text_color="Black")
 
